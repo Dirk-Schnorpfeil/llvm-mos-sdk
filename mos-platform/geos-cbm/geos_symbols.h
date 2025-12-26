@@ -72,9 +72,9 @@ extern uint16_t rightMargin; /** rightmost point for writing characters. When
 
 /** End of variables saved during DB's and DA's */
 
-extern uint8_t pressFlag; /** Flag indicating that a new key has been pressed */
-extern uint16_t mouseXPos;     /** x position of mouse */
-extern uint8_t mouseYPos;      /** y position of mouse */
+extern volatile uint8_t pressFlag; /** Flag indicating that a new key has been pressed */
+extern volatile uint16_t mouseXPos;     /** x position of mouse */
+extern volatile uint8_t mouseYPos;      /** y position of mouse */
 extern uint8_t *returnAddress; /** address to return from in-line call */
 
 extern uint8_t graphMode;
@@ -226,7 +226,7 @@ extern uint8_t *mousePicData; /** ram array for mouse picture data */
 extern uint8_t maxMouseSpeed; /** maximum speed for mouse */
 extern uint8_t minMouseSpeed; /** minimum speed for mouse */
 extern uint8_t mouseAccel;    /** acceleration of mouse */
-extern uint8_t keyData; /** This is where key service routines should look */
+extern volatile uint8_t keyData; /** This is where key service routines should look */
 extern uint8_t
     mouseData; /** This is where mouse service routines should look */
 extern uint8_t inputData; /** This is where input drivers pass device
@@ -305,9 +305,9 @@ extern uint8_t *dateCopy; /** copy of year, month, day */
 extern mobpos_t mobpos[8];
 extern uint8_t msbxpos;
 extern uint8_t grcntrl1;   /** graphics control register #1 */
-extern uint8_t rasreg;     /** raster register */
-extern uint8_t lpxpos;     /** light pen x position */
-extern uint8_t lpypos;     /** light pen y position */
+extern volatile uint8_t rasreg;     /** raster register */
+extern volatile uint8_t lpxpos;     /** light pen x position */
+extern volatile uint8_t lpypos;     /** light pen y position */
 extern uint8_t mobenble;   /** moving object enable bits */
 extern uint8_t grcntrl2;   /** graphics control register #2 */
 extern uint8_t moby2;      /** double object size in y */

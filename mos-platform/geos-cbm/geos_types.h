@@ -22,7 +22,7 @@ extern "C" {
 typedef uint8_t track_t;  /** a track on a commodore disk drive */
 typedef uint8_t sector_t; /** a sector on a commodore disk drive */
 
-typedef void (*vector)(void);
+typedef __attribute__((nonreentrant)) void (*vector)(void);
 
 typedef char disk_name_t[DK_NM_ID_LEN]; /** type of a disk  name */
 typedef char file_name_t[DK_NM_ID_LEN]; /** type of a file  name */
@@ -49,6 +49,11 @@ typedef struct date {
   uint8_t hour;
   uint8_t minute;
 } date_t;
+
+typedef struct process_table {
+  vector handler_function;
+  uint16_t timer;
+} process_table_t;
 
 /***********************************************************************
  * Commodore/GEOS disk block

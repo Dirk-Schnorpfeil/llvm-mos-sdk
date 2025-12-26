@@ -440,7 +440,7 @@ void DisablSprite(uint8_t sprite_no) {
  * GEOS Process Support
  ***********************************************************************/
 
-void InitProcesses(uint8_t num_of_processes, const uint8_t *process_table) {
+void InitProcesses(uint8_t num_of_processes, const process_table_t *process_table) {
   __r0 = (uint16_t)process_table;
   __attribute__((leaf)) asm volatile(
       "jsr __InitProcesses" : : "a"(num_of_processes) : "x", "y", "c", "v");
