@@ -666,6 +666,16 @@ uint16_t CRC(uint8_t *data, uint16_t count) {
   return __r2;
 }
 
+/* jsr to address given in (a/x), do nothing if (a/x) is 0x0000 */
+void CallRoutine(vector func) {
+  
+  
+  __attribute__((leaf)) 
+  asm volatile("lda #mos16lo(func)\n"
+               "ldx #mos16hi(func)\n"
+               "jsr __CallRoutine" : : : "a", "x", "y", "c", "v");
+} 
+
 /***********************************************************************
  * GEOS High-Level Disk & File Routines
  ***********************************************************************/

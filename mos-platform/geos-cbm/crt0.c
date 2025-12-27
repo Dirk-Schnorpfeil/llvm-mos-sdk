@@ -12,7 +12,6 @@
 
 asm(R"ASM(
     .set __zp_reg_size, 0xfb - 0x90
-    .section .data
     __userzp_copy:	.space __zp_reg_size+1
     .section .text 
     .global __swap_userzp 

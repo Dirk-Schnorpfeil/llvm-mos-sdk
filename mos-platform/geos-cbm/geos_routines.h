@@ -150,7 +150,7 @@ void DisablSprite(uint8_t sprite_no);
 /***********************************************************************
  * Routines for Process Support
  ***********************************************************************/
-void InitProcesses(uint8_t num_of_processes, const uint8_t *process_table);
+void InitProcesses(uint8_t num_of_processes, const process_table_t *process_table);
 void RestartProcess(uint8_t process_num);
 void BlockProcess(uint8_t process_num);
 void UnlockProcess(uint8_t process_num);
@@ -177,6 +177,7 @@ void ToBasic(uint8_t *basic_cmd);
 void EnterDeskTop(void);
 void FirstInit(void);
 uint16_t CRC(uint8_t *data, uint16_t count);
+void CallRoutine(vector func); 
 
 /***********************************************************************
  * High Level File Routines

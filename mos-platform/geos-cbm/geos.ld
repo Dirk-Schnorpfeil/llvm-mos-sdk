@@ -245,6 +245,7 @@ __ReadLink                = 0x904b;
 __BootGEOS                = 0xc000;
 __ResetHandle             = 0xc003;
 __InterruptMain           = 0xc100;
+__CallRoutine             = 0xC1D8; 
 
 /* PROCESSES */
 
